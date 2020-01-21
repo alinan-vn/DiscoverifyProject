@@ -1,4 +1,3 @@
 class Genre < ApplicationRecord
-    belongs_to :artist_genres
-    belongs_to  :artists, through: :artist_genres
+    has_and_belongs_to_many :artists
 end

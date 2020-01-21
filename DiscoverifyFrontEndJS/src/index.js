@@ -1,30 +1,31 @@
 const BASE_URL = "http://localhost:3000"
-const TRAINERS_URL = `${BASE_URL}/trainers`
-const POKEMONS_URL = `${BASE_URL}/pokemons`
+const ARTISTS_URL = `${BASE_URL}/artists`
+const GENRES_URL = `${BASE_URL}/genres`
 const findBody = document.querySelector('body')
 
 const divy = document.getElementsByClassName('card')
 
 document.addEventListener("DOMContentLoaded", function() {
-    fetchTrainers();
+    fetchArtists();
 });
 
-function fetchTrainers(){
-    return fetch(TRAINERS_URL)
+function fetchArtists(){
+    return fetch(ARTISTS_URL)
         .then(resp => resp.json())
-        .then(json => addTrainers(json.trainers))
+        .then(artists => 
+            // console.log(artists)
+            addArtists(artists))
 }
 
-function addTrainers(array){
-    // let array = jsonObj.trainers
-    for (const obj of array){
-        let divWithCard = document.createElement('div')
+function addArtists(artists){
+
+    for (const artObj of artists){
+        const divWithCard = document.createElement('div')
         divWithCard.classList.add('card')
-        divWithCard.id = obj.id
-        let newP = document.createElement('p')
-        newP.innerText = obj.name
-        let stringP = String(newP)
-        divWithCard.appendChild(newP)
+        divWithCard.id = artObj.id
+        const p = document.createElement('p')
+        p.innerText = artObj.name
+        divWithCard.appendChild(p)
         findBody.appendChild(divWithCard)
     }
 }
