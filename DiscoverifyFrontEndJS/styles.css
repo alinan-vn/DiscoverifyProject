@@ -33,6 +33,12 @@ body {
     padding: 10px;
     border-radius: 10px;
   }
+
+  div.disco-button {
+    width: 100px;
+    height: 60px;
+    text-align: center;
+  }
   
   p {
     font-size: 1.5em;
