@@ -7,11 +7,13 @@ body {
     background-color: #4caf50;
     margin: 0 auto;
     height: 50px;
+
   }
   
   header h2 {
     padding: 10px;
     margin: 0;
+    text-align: center;
   }
   
   main {
